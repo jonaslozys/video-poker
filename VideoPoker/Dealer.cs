@@ -17,12 +17,28 @@ namespace VideoPoker
             cardDeck = new CardDeck();
         }
 
+        public void Deal()
+        {
+            cardDeck.SetupDeck();
+            GetHand();
+            DisplayCards();
 
-        public void GetHand()
+        }
+
+
+        private void GetHand()
         {
             for (int index = 0; index < 5; index++)
             {
                 playerHand[index] = cardDeck.getDeck[index];
+            }
+        }
+
+        private void DisplayCards()
+        {
+            foreach (Card card in playerHand)
+            {
+                Console.WriteLine($"{card.CardSuit} {card.CardValue}");
             }
         }
     }

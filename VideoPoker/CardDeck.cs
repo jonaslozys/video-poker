@@ -35,6 +35,8 @@ namespace VideoPoker
                     index++;
                 }
             }
+
+            ShuffleCards();
         }
 
         private void ShuffleCards()
