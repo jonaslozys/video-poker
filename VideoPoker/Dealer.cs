@@ -25,6 +25,21 @@ namespace VideoPoker
 
         }
 
+        public void Draw(List<int> cardsToHold)
+        {
+            int deckIndex = 5;
+
+            for (int index = 1; index <= 5; index++)
+            {
+                if (cardsToHold.Contains(index)) {
+                    playerHand[index - 1] = cardDeck.getDeck[deckIndex];
+                    deckIndex++;
+                }
+            }
+
+            DisplayCards();
+        }
+
 
         private void GetHand()
         {
@@ -41,5 +56,7 @@ namespace VideoPoker
                 Console.WriteLine($"{card.CardSuit} {card.CardValue}");
             }
         }
+
+
     }
 }

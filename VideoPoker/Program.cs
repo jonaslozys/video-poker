@@ -34,17 +34,14 @@ namespace VideoPoker
 
                 Console.WriteLine("Enter number(s) of cards to hold. (1 - 5)");
                 string selectedCards = Console.ReadLine();
-                int[] cardNumbers = ParseInput(selectedCards).ToArray();
-                foreach(int number in cardNumbers)
-                {
-                    Console.WriteLine($"Holding {number}");
 
-                }
+                List<int> cardNumbers = ParseInput(selectedCards);
+
+                dealer.Draw(cardNumbers);
+
+                Console.WriteLine("\nPlay again \n");
 
             }
-
-
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
         }
     }
 }
