@@ -40,7 +40,7 @@ namespace VideoPoker
 
                 dealer.Draw(cardNumbers);
 
-                Console.WriteLine("\nPlay again \n");
+                Console.WriteLine("\n\n\n\nPlay again \n");
 
             }
         }

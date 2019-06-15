@@ -10,11 +10,13 @@ namespace VideoPoker
     {
         private Card[] playerHand;
         private CardDeck cardDeck;
+        private HandEvaluator handEvaluator;
 
         public Dealer()
         {
             playerHand = new Card[5];
             cardDeck = new CardDeck();
+            handEvaluator = new HandEvaluator();
         }
 
         public void Deal()
@@ -37,7 +39,8 @@ namespace VideoPoker
                     deckIndex++;
                 }
             }
-
+            SortHand();
+            EvaluateCombination();
             DisplayCards();
         }
 
@@ -50,12 +53,29 @@ namespace VideoPoker
             }
         }
 
+        private void SortHand()
+        {
+            var sortQuery = from hand in playerHand orderby hand.CardValue select hand;
+
+            var index = 0;
+            foreach (var element in sortQuery.ToList())
+            {
+                playerHand[index] = element;
+                index++;
+            }
+        }
+
         private void DisplayCards()
         {
             foreach (Card card in playerHand)
             {
                 Console.WriteLine($"{card.CardSuit} {card.CardValue}");
             }
+        }
+
+        private void EvaluateCombination()
+        {
+            handEvaluator.Evaluate(playerHand);
         }
 
 
