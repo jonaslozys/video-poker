@@ -1,2 +1,4 @@
 .vs/VideoPoker/v16/Server
-/videopoker/obj/debug
+videopoker/obj/Debug/
+videopoker/bin/Debug
+

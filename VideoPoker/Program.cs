@@ -8,6 +8,7 @@ namespace VideoPoker
 {
     class Program
     {
+        // Parse user input to only accept numbers in range [1 -5]
         public static List<int> ParseInput(string inputString)
         {
             List<int> selectedCards = new List<int>();

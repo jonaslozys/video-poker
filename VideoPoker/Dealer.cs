@@ -8,8 +8,8 @@ namespace VideoPoker
 {
     class Dealer
     {
-        public Card[] playerHand;
-        public CardDeck cardDeck;
+        private Card[] playerHand;
+        private CardDeck cardDeck;
 
         public Dealer()
         {
@@ -25,13 +25,14 @@ namespace VideoPoker
 
         }
 
+        // Leave user selected cards, replace others with new ones from deck
         public void Draw(List<int> cardsToHold)
         {
             int deckIndex = 5;
 
             for (int index = 1; index <= 5; index++)
             {
-                if (cardsToHold.Contains(index)) {
+                if (!cardsToHold.Contains(index)) {
                     playerHand[index - 1] = cardDeck.getDeck[deckIndex];
                     deckIndex++;
                 }
