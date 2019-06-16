@@ -11,16 +11,19 @@ namespace VideoPoker
         private Card[] playerHand;
         private CardDeck cardDeck;
         private HandEvaluator handEvaluator;
+        public int playerMoney { get; protected set; }
 
         public Dealer()
         {
             playerHand = new Card[5];
             cardDeck = new CardDeck();
             handEvaluator = new HandEvaluator();
+            playerMoney = 100;
         }
 
         public void Deal()
         {
+            playerMoney -= 1;
             cardDeck.SetupDeck();
             GetHand();
             DisplayCards();
@@ -83,9 +86,11 @@ namespace VideoPoker
 
         private void EvaluateCombination()
         {
-            HandEvaluator.Hand hand = handEvaluator.Evaluate(playerHand);
+            var hand = handEvaluator.Evaluate(playerHand);
 
             Console.WriteLine(hand.ToString());
+            playerMoney += (int)hand;
+            Console.WriteLine(playerMoney);
             
         }
 

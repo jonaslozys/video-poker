@@ -10,7 +10,7 @@ namespace VideoPoker
     {
         public static void DrawCardOutline(int x,  int y)
         {
-            x *= 10;
+            x *= 12;
 
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = ConsoleColor.Black;
@@ -32,7 +32,7 @@ namespace VideoPoker
 
         public static void DrawSuitAndValue(Card card, int x, int y)
         {
-            x *= 10;
+            x *= 12;
             char cardSuit = ' ';
 
             switch(card.CardSuit)

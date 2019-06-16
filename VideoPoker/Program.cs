@@ -55,6 +55,11 @@ namespace VideoPoker
                 if(quit == 'q')
                 {
                     play = false;
+                } else if (dealer.playerMoney < 1)
+                {
+                    Console.WriteLine("Game over, you have ran out of money");
+                    System.Threading.Thread.Sleep(3000);
+                    play = false;
                 }
 
             }
