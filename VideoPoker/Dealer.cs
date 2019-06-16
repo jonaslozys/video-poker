@@ -67,9 +67,13 @@ namespace VideoPoker
 
         private void DisplayCards()
         {
+            int x = Console.CursorLeft;
+            int y = Console.CursorTop;
+
             foreach (Card card in playerHand)
             {
-                Console.WriteLine($"{card.CardSuit} {card.CardValue}");
+                HandDisplay.DrawCardOutline(x, y);
+                x++;
             }
         }
 
