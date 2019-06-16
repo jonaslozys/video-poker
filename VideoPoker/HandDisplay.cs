@@ -60,6 +60,8 @@ namespace VideoPoker
             Console.SetCursorPosition(x += 2, y += 2);
             Console.Write(cardSuit);
 
+            Console.ForegroundColor = ConsoleColor.Black;
+
             Console.SetCursorPosition(x += 2, y += 6);
             Console.Write(card.CardValue);
 

@@ -23,11 +23,10 @@ namespace VideoPoker
 
         public void Deal()
         {
-            playerMoney -= 1;
+            playerMoney -= 1;  // One play costs 1 unit of money
             cardDeck.SetupDeck();
             GetHand();
             DisplayCards();
-
         }
 
         // Leave user selected cards, replace others with new ones from deck
@@ -80,7 +79,7 @@ namespace VideoPoker
                 x++;
             }
 
-            Console.SetCursorPosition(0, y += 12);
+            Console.SetCursorPosition(0, y += 12);  // Move the cursor down before displaying the hand after draw
 
         }
 
@@ -89,8 +88,13 @@ namespace VideoPoker
             var hand = handEvaluator.Evaluate(playerHand);
 
             Console.WriteLine(hand.ToString());
-            playerMoney += (int)hand;
-            Console.WriteLine(playerMoney);
+            int payout = (int)hand;
+            if (payout > 0)
+            {
+                Console.WriteLine($"+{payout}");
+            }
+            playerMoney += payout;
+            Console.WriteLine($"You balance: {playerMoney}");
             
         }
 

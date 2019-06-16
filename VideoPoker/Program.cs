@@ -45,16 +45,16 @@ namespace VideoPoker
                 dealer.Deal();
                 Console.WriteLine("Enter number(s) of cards to hold. (1 - 5)");
 
-                string selectedCards = Console.ReadLine();
-                List<int> cardNumbers = ParseInput(selectedCards);
+                List<int> cardNumbers = ParseInput(Console.ReadLine());
 
                 dealer.Draw(cardNumbers);
 
-                Console.WriteLine("\n\n\n\nPress q to exit, any other key to play another hand.\n");
+                Console.WriteLine("\n\n\nPress q to exit, any other key to play another hand.");
                 char quit = Console.ReadKey().KeyChar;
                 if(quit == 'q')
                 {
                     play = false;
+
                 } else if (dealer.playerMoney < 1)
                 {
                     Console.WriteLine("Game over, you have ran out of money");
