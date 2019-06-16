@@ -73,8 +73,12 @@ namespace VideoPoker
             foreach (Card card in playerHand)
             {
                 HandDisplay.DrawCardOutline(x, y);
+                HandDisplay.DrawSuitAndValue(card, x, y);
                 x++;
             }
+
+            Console.SetCursorPosition(0, y += 12);
+
         }
 
         private void EvaluateCombination()

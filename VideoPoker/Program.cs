@@ -27,10 +27,15 @@ namespace VideoPoker
         }
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.Green;
             Dealer dealer = new Dealer();
 
-            while (true)
+            bool play = true;
+
+            while (play)
             {
+                Console.Clear();
+                Console.SetCursorPosition(0, 1);
                 dealer.Deal();
 
                 Console.WriteLine("Enter number(s) of cards to hold. (1 - 5)");
@@ -40,7 +45,12 @@ namespace VideoPoker
 
                 dealer.Draw(cardNumbers);
 
-                Console.WriteLine("\n\n\n\nPlay again \n");
+                Console.WriteLine("\n\n\n\nPress q to exit, any other key to play another hand.\n");
+                char quit = Console.ReadKey().KeyChar;
+                if(quit == 'q')
+                {
+                    play = false;
+                }
 
             }
         }

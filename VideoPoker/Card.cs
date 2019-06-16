@@ -10,7 +10,7 @@ namespace VideoPoker
     {
         public enum Suit
         {
-            HERTS,
+            HEARTS,
             SPADES,
             DIAMONDS,
             CLUBS
