@@ -28,6 +28,11 @@ namespace VideoPoker
         static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.Green;
+            Console.SetWindowSize(64, 40);
+            Console.BufferWidth = 64;
+            Console.BufferHeight = 40;
+            Console.Title = "Video Poker";
+          
             Dealer dealer = new Dealer();
 
             bool play = true;
@@ -36,11 +41,11 @@ namespace VideoPoker
             {
                 Console.Clear();
                 Console.SetCursorPosition(0, 1);
+
                 dealer.Deal();
-
                 Console.WriteLine("Enter number(s) of cards to hold. (1 - 5)");
-                string selectedCards = Console.ReadLine();
 
+                string selectedCards = Console.ReadLine();
                 List<int> cardNumbers = ParseInput(selectedCards);
 
                 dealer.Draw(cardNumbers);

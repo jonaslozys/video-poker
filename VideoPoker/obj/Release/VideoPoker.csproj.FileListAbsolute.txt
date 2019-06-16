@@ -1,0 +1,6 @@
+C:\Users\Jonas\Desktop\Visma\VideoPoker\VideoPoker\obj\Release\VideoPoker.csproj.CoreCompileInputs.cache
+C:\Users\Jonas\Desktop\Visma\VideoPoker\VideoPoker\bin\Release\VideoPoker.exe.config
+C:\Users\Jonas\Desktop\Visma\VideoPoker\VideoPoker\bin\Release\VideoPoker.exe
+C:\Users\Jonas\Desktop\Visma\VideoPoker\VideoPoker\bin\Release\VideoPoker.pdb
+C:\Users\Jonas\Desktop\Visma\VideoPoker\VideoPoker\obj\Release\VideoPoker.exe
+C:\Users\Jonas\Desktop\Visma\VideoPoker\VideoPoker\obj\Release\VideoPoker.pdb
