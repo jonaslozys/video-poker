@@ -39,9 +39,9 @@ namespace VideoPoker
                     deckIndex++;
                 }
             }
+            DisplayCards();
             SortHand();
             EvaluateCombination();
-            DisplayCards();
         }
 
 
@@ -75,7 +75,10 @@ namespace VideoPoker
 
         private void EvaluateCombination()
         {
-            handEvaluator.Evaluate(playerHand);
+            HandEvaluator.Hand hand = handEvaluator.Evaluate(playerHand);
+
+            Console.WriteLine(hand.ToString());
+            
         }
 
 
